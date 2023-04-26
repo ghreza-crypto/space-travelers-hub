@@ -1,27 +1,68 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family:
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    'Roboto',
-    'Oxygen',
-    'Ubuntu',
-    'Cantarell',
-    'Fira Sans',
-    'Droid Sans',
-    'Helvetica Neue',
-    sans-serif;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family:
-    source-code-pro,
-    Menlo,
-    Monaco,
-    Consolas,
-    'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem;
+}
+
+nav .logo {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding-left: 1rem;
+}
+
+nav .log-img {
+  font-size: 3rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  text-decoration: none;
+}
+
+nav ul li {
+  padding-inline-start: 1.3rem;
+}
+
+nav ul .separator {
+  padding-left: 1rem;
+  color: blue;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+  color: blue;
+  border-bottom: 2px solid transparent;
+  transition: all;
+}
+
+nav ul li a:hover {
+  color: rgb(170, 90, 245);
+  border-bottom: 2px solid rgb(170, 90, 245);
+  transition: 1s ease-in-out;
+}
+
+nav ul li a.active {
+  color: blue;
+  border-bottom: 2px solid blue;
+  transition: 1s ease-in-out;
 }
