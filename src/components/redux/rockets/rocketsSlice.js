@@ -8,17 +8,7 @@ const initialState = {
   errorMessage: '',
 };
 
-export const fetchRockets = createAsyncThunk(
-  'rockets/fetchRockets',
-  async () => {
-    try {
-      const getRockets = await axios.get(baseUrl);
-      return getRockets.data;
-    } catch (error) {
-      return error;
-    }
-  },
-);
+export const fetchRockets = createAsyncThunk('rockets/fetchRockets', () => axios.get(baseUrl).then((response) => response.data));
 
 export const rocketsSlice = createSlice({
   name: 'rockets',
@@ -42,7 +32,7 @@ export const rocketsSlice = createSlice({
       })
       .addCase(fetchRockets.rejected, (state, action) => {
         state.isLoading = false;
-        state.errorMessage = action.payload;
+        state.errorMessage = action.error.message;
       });
   },
 });
