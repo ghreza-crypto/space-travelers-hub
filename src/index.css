@@ -111,4 +111,13 @@ nav ul li a.active {
   cursor: pointer;
 }
 
-.member-badge {}
+.not-member {
+  background-color: coral;
+  color: #fdfbfb;
+}
+
+.member-badge {
+  padding: 4px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+}
