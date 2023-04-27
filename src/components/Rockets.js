@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchRockets } from './redux/rockets/rocketsSlice';
+import { fetchRockets, reserve } from './redux/rockets/rocketsSlice';
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -9,8 +9,10 @@ const Rockets = () => {
   useEffect(() => {
     dispatch(fetchRockets());
   }, []);
+  const handleReserve = (id) => {
+    dispatch(reserve(id));
+  };
   return (
-
     <div>
       {isLoading && <h1>Loading...</h1>}
       {!isLoading && errorMessage ? (
@@ -33,7 +35,7 @@ const Rockets = () => {
               {rocket.reserved ? (
                 <button type="button">Cancel Reservation</button>
               ) : (
-                <button type="button">Reserve Rocket</button>
+                <button type="button" onClick={() => handleReserve(rocket.rocket_id)}>Reserve Rocket</button>
               )}
               {errorMessage && <h1>{errorMessage}</h1>}
             </div>
