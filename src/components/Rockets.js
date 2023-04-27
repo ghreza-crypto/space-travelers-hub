@@ -42,6 +42,7 @@ const Rockets = () => {
         ) : null}
     </div>
 
+  );
 };
 
 export default Rockets;
