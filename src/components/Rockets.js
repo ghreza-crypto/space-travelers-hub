@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchRockets } from './redux/rockets/rocketsSlice';
 
-const Rockets = () => (
-  <div>
-    {' '}
-    <h1> Rockets </h1>
-    {' '}
-  </div>
-);
+const Rockets = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRockets());
+  }, []);
+  return (
+    <div>Rockets</div>
+  );
+};
 
 export default Rockets;
