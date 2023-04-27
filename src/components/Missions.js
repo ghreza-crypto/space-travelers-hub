@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import getMissions from './redux/missions/getMissions';
 
-const Missions = () => (
-  <div>
-    {' '}
-    <h1> Missions </h1>
-    {' '}
-  </div>
-);
+const Missions = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getMissions());
+  }, [dispatch]);
+  return <div> Missions </div>;
+};
 
 export default Missions;
