@@ -7,10 +7,8 @@ const Rockets = () => {
 
   useEffect(() => {
     dispatch(fetchRockets());
-  }, []);
-  return (
-    <div>Rockets</div>
-  );
+  }, [dispatch]);
+  return <div> Rockets </div>;
 };
 
 export default Rockets;
