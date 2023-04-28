@@ -7,7 +7,9 @@ const Rockets = () => {
   const { isLoading, rockets, errorMessage } = useSelector((store) => store.rockets);
 
   useEffect(() => {
-    dispatch(fetchRockets());
+    if (rockets.length === 0) {
+      dispatch(fetchRockets());
+    }
   }, []);
   const handleReserve = (id) => {
     dispatch(reserve(id));
@@ -17,7 +19,7 @@ const Rockets = () => {
     dispatch(cancelReservation(id));
   };
   return (
-    <div>
+    <div className="rocketsWrapper">
       {isLoading && <h1>Loading...</h1>}
       {!isLoading && errorMessage ? (
         <div>
@@ -25,22 +27,23 @@ const Rockets = () => {
           {errorMessage}
         </div>
       ) : null}
-
       {!isLoading && rockets.length
         ? (rockets.map((rocket) => (
-          <div key={rocket.rocket_id}>
-            <img src={rocket.flickr_images[0]} alt={rocket.name} />
-            <div>
+          <div key={rocket.rocket_id} className="rocketsContainer">
+            <img src={rocket.flickr_images[0]} alt={rocket.name} className="rocketImage" />
+            <div className="rocketsInfo">
               <h2>{rocket.rocket_name}</h2>
               <p>
-                {rocket.reserved && <span>Reserved</span>}
+                {rocket.reserved && <span className="reservedLabel">Reserved</span>}
                 {rocket.description}
               </p>
-              {rocket.reserved ? (
-                <button type="button" onClick={() => handleCancelation(rocket.rocket_id)}>Cancel Reservation</button>
-              ) : (
-                <button type="button" onClick={() => handleReserve(rocket.rocket_id)}>Reserve Rocket</button>
-              )}
+              <div className="btnWrapper">
+                {rocket.reserved ? (
+                  <button type="button" onClick={() => handleCancelation(rocket.rocket_id)} className="cancelBtn">Cancel Reservation</button>
+                ) : (
+                  <button type="button" onClick={() => handleReserve(rocket.rocket_id)} className="reserveBtn">Reserve Rocket</button>
+                )}
+              </div>
               {errorMessage && <h1>{errorMessage}</h1>}
             </div>
           </div>

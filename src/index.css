@@ -160,3 +160,59 @@ nav ul li a.active {
   color: rgb(9, 77, 9);
   border: 1px solid rgb(9, 77, 9);
 }
+
+/* rockets section */
+.rocketsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.rocketsContainer {
+  display: flex;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  gap: 4rem;
+}
+
+.rocketImage {
+  width: 240px;
+}
+
+.rocketsInfo {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 10px;
+}
+
+.btnWrapper {
+  display: flex;
+}
+
+.cancelBtn {
+  background-color: white;
+  color: gray;
+  padding: 0.5rem;
+  border-radius: 7px;
+  border: gray 1px solid;
+}
+
+.reserveBtn {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 7px;
+}
+
+.reservedLabel {
+  background-color: #2fabbf;
+  color: white;
+  border-radius: 40px;
+  margin: 4px;
+  padding-right: 5px;
+  padding-left: 5px;
+  font-size: small;
+}
