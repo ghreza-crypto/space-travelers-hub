@@ -7,6 +7,12 @@ const initialState = {
   errorMessage: '',
 };
 
+// const id = action.payload;
+// const newState = state.rockets.map((rocket) =>
+//   rocket.rocket_id === id ? { ...rocket, reserved: true } : rocket
+// );
+// return { ...state, rockets: newState };
+
 const missionsSlice = createSlice({
   name: 'missions',
   initialState,
@@ -18,7 +24,7 @@ const missionsSlice = createSlice({
       );
 
       if (missionId != null) {
-        const updateMissions = { ...state.missions[missionId], reserve: true };
+        const updateMissions = { ...state.missions[missionId], reserved: true };
         state.missions[missionId] = updateMissions;
       }
     },
@@ -31,7 +37,7 @@ const missionsSlice = createSlice({
       if (missionId != null) {
         const updateMissions = {
           ...state.missions[missionId],
-          reserve: false,
+          reserved: false,
         };
         state.missions[missionId] = updateMissions;
       }

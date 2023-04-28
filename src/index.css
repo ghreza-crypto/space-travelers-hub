@@ -81,25 +81,39 @@ nav ul li a.active {
 .mission-table {
   border-collapse: collapse;
   width: 100%;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .mission-table th,
 .mission-table td {
   border: 2px solid #ddd;
-  padding: 35px;
-  text-align: center;
+  padding: 25px;
+  text-align: left;
+}
+
+.mission-title {
+  font-weight: bold;
+}
+
+.mission-title,
+.mission-desc {
+  vertical-align: top;
 }
 
 .mission-table th {
   background-color: #f2f2f2;
-  color: #444;
+  color: #000;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .mission-table td {
   color: #555;
+}
+
+.mission-table .mission-badge {
+  width: 12rem;
+  font-size: 10rem;
 }
 
 .mission-table tbody tr:nth-child(odd) {
@@ -108,16 +122,41 @@ nav ul li a.active {
 
 .mission-table tbody tr:hover {
   background-color: #f5f5f5;
-  cursor: pointer;
-}
-
-.not-member {
-  background-color: coral;
-  color: #fdfbfb;
 }
 
 .member-badge {
-  padding: 4px;
   border-radius: 8px;
   font-size: 0.8rem;
+  padding: 4px;
+}
+
+.not-member {
+  background-color: rgb(102, 78, 67);
+  font-weight: bold;
+  color: #fdfbfb;
+  text-align: center;
+}
+
+.active-member {
+  background-color: rgb(72, 137, 136);
+  font-weight: bold;
+  color: #fdfbfb;
+  text-align: center;
+}
+
+.btn-mission {
+  width: 8rem;
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+
+.leaveBtn {
+  color: red;
+  border: 1px solid red;
+}
+
+.joinBtn {
+  color: rgb(9, 77, 9);
+  border: 1px solid rgb(9, 77, 9);
 }
