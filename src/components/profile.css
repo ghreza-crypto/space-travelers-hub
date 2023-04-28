@@ -2,11 +2,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 14rem;
+  gap: 12rem;
 }
 
 .sub-section {
   margin-top: 1.4rem;
+  width: 35rem;
 }
 
 .not-found {

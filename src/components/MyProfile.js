@@ -28,7 +28,7 @@ const MyProfile = () => {
         <h2>My Rockets</h2>
         {rockets.some((rocket) => rocket.reserved === true) ? (
           <div className="reserved-list">
-            {missions
+            {rockets
               .filter((rocket) => rocket.reserved === true)
               .map((rocket) => (
                 <h3 key={rocket.rocket_id}>{rocket.rocket_name}</h3>
