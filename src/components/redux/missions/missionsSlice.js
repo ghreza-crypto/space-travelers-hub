@@ -44,8 +44,12 @@ const missionsSlice = createSlice({
       })
 
       .addCase(getMissions.fulfilled, (state, action) => {
+        const missions = action.payload.map((item) => ({
+          ...item,
+          reserved: false,
+        }));
         state.isLoading = true;
-        state.missions = action.payload;
+        state.missions = missions;
       })
 
       .addCase(getMissions.rejected, (state, action) => {
@@ -55,4 +59,5 @@ const missionsSlice = createSlice({
   },
 });
 
-export default missionsSlice;
+export const { joinMissions, leaveMissions } = missionsSlice.actions;
+export default missionsSlice.reducer;
