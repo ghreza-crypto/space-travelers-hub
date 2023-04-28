@@ -35,7 +35,10 @@ export const rocketsSlice = createSlice({
       .addCase(fetchRockets.fulfilled, (state, action) => {
         const rockets = action.payload.map((item) => (
           {
-            ...item,
+            rocket_id: item.rocket_id,
+            rocket_name: item.rocket_name,
+            description: item.description,
+            flickr_images: item.flickr_images,
             reserved: false,
           }
         ));

@@ -51,7 +51,9 @@ const missionsSlice = createSlice({
 
       .addCase(getMissions.fulfilled, (state, action) => {
         const missions = action.payload.map((item) => ({
-          ...item,
+          mission_id: item.mission_id,
+          mission_name: item.mission_name,
+          description: item.description,
           reserved: false,
         }));
         state.isLoading = true;
