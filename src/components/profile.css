@@ -1,0 +1,29 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12rem;
+}
+
+.sub-section {
+  margin-top: 1.4rem;
+  width: 35rem;
+}
+
+.not-found {
+  margin-top: 1rem;
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.reserved-list {
+  margin-top: 1rem;
+  border: 1px solid black;
+  padding: 2rem;
+}
+
+.reserved-list h3 {
+  width: 100%;
+  padding: 1rem;
+  border-bottom: 1px solid black;
+}
